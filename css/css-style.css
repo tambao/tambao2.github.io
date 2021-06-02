@@ -183,7 +183,7 @@ body {
 }
 
 .main-picture.woman {
-  background-image: url("../images/images-woman.jpg");
+  background-image: url("../images/avatar.png");
   padding: 0;
   margin-top: 24px;
   margin-left: 24px;
@@ -707,7 +707,7 @@ section.bl-expand .bl-icon-close {
 }
 
 .bl-main>section.topleft.woman {
-  background-image: url('../images/images-woman.jpg');
+  background-image: url('../images/avatar.png');
 }
 
 .bl-main>section.topleft:before {
