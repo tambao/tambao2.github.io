@@ -905,6 +905,9 @@ footer {
 }
 
 @media (min-width: 768px) {
+.logo{
+    margin : 0 auto;
+}
 .header .navbar-brand {
 	padding-left: 0;
 }
@@ -921,6 +924,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+.logo{
+    margin : 0 auto;
+}
 .banner-container {
 	height: 700px;
 }
@@ -950,6 +956,9 @@ footer {
 }
 
 @media (max-width:760px) {
+.logo{
+    margin : 0 auto;
+}
 .header .navbar-nav > li > a {
 	padding: 7px 12px;
 	font-size: 14px;
@@ -960,6 +969,9 @@ footer {
 }
 
 @media (max-width: 480px) {
+.logo{
+    margin : 0 auto;
+}
 .banner-container {
 	height: 500px;
 }
@@ -1004,6 +1016,9 @@ footer {
 }
 
 @media (max-width: 320px) {
+.logo{
+    margin : 0 auto;
+}
 .banner-container {
 }
 .grid .text-content {
