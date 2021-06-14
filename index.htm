@@ -36,6 +36,16 @@
       <title>Tam Bao Investments - Consulting</title>
       <meta name="description"
             content="Understand more about how Tam Bao Investments helps companies to grow business across Asia.">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <!-- firebase -->
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
 
       <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -193,12 +203,13 @@
                   Tam Bao Investments
                </h1>
                <p class="mb-6 text-base md:text-xl md:mb-8">
-                  Công ty tư vấn chuyên về thị trường Việt Nam với hơn 300 chuyên gia tại 18 văn phòng
+                  Tư vấn về đầu tư tài chính chuyên sâu về thị trường Việt Nam. Ủy thác đầu tư và quản lý tài khoản đầu tư!
+Phương pháp đầu tư: Giao dịch định lượng (Quantitative Trading) kết hợp với lọc cổ phiếu theo CANSLIM và Phương pháp Quản lý vốn đặc biệt.
                </p>
                <a class="inline-flex items-center px-3 py-2 text-gray-200 transition duration-300 border border-white rounded text-ss md:text-base hover:bg-brand-blue hover:border-brand-blue md:px-5 md:py-3"
                   href="#contact">
                   <span>
-                     Nhận tư vấn miễn phí từ chuyên gia thị trường của chúng tôi
+                     Nhận tư vấn miễn phí từ chuyên gia của chúng tôi
                   </span>
                   <svg class="w-5 h-5 ml-2"
                        xmlns="http://www.w3.org/2000/svg"
@@ -1730,7 +1741,7 @@
             <hr class="w-12 md:w-24 my-6 md:my-8 border border-brand-blue rounded-full">
          </div>
       </div>
-      <div class="relative overflow-hidden bg-center bg-no-repeat bg-cover"
+      <div class="width1700 relative overflow-hidden bg-center bg-no-repeat bg-cover"
            style="background-image: url(images/tambao/hoithao.jpg)/*tpa=https://ycpsolidiance.com/lp-a03/assets/images/tambao/hoithao.jpg*/">
          <div class="container relative py-12 overflow-hidden text-gray-200 md:py-20">
             <div class="relative z-10 max-w-2xl pr-4 mr-32 md:ml-0 md:px-0">
@@ -1767,9 +1778,12 @@
             </h2>
             <hr class="w-12 md:w-24 my-6 md:my-8 border border-brand-blue rounded-full">
             <p class="mb-5 md:mb-8">
-               Tuấn Anh - Founder Tam Bảo Investments, Tuấn Anh xuất thân từ ĐH Bách Khoa HN - Khoa CNTT nhưng bén duyên với tài chính từ năm 19 tuổi. Trước đây Tuấn Anh từng làm Interbank FX Trader cũng khá lâu, trải qua khá nhiều thăng trầm với nghề nhưng cũng đã có một số thành quả nhất định.
-Mục tiêu xây dựng Tam Bảo Investments chủ yếu để chia sẻ thông tin, giúp một phần mọi người có cái nhìn đúng hơn về đầu tư tài chính cũng như tìm được cho mình phương pháp đầu tư hiệu quả phù hợp với bản thân và an tâm đầu tư để duy trì lợi nhuận bền vững! Có lẽ mọi người sẽ thắc mắc về tên Tam Bảo, vì Tuấn Anh là người theo Đạo Phật từ nhỏ nên tên này được lấy nguồn cảm hứng từ đó!
-Kết nối với nhau ở ngoài đời sống hay trên mxh đều là nhân duyên, hi vọng Tuấn Anh và mọi người sẽ đồng hành cùng nhau để đạt được nhiều thành quả trên suốt hành trình đầu tư của mình!
+               <li><b>Tuấn Anh - Founder Tam Bảo Investments</b>, Tuấn Anh xuất thân từ ĐH Bách Khoa HN - Khoa CNTT nhưng bén duyên với tài chính từ năm 19 tuổi. Trước đây Tuấn Anh từng làm Interbank FX Trader cũng khá lâu, trải qua khá nhiều thăng trầm với nghề nhưng cũng đã có một số thành quả nhất định.</li>
+<li>Mục tiêu xây dựng Tam Bảo Investments chủ yếu để chia sẻ thông tin, giúp một phần mọi người có cái nhìn đúng hơn về đầu tư tài
+    chính cũng như tìm được cho mình phương pháp đầu tư hiệu quả phù hợp với bản thân và an tâm đầu tư để duy trì lợi nhuận bền vững!
+     Có lẽ mọi người sẽ thắc mắc về tên Tam Bảo, vì Tuấn Anh là người theo Đạo Phật từ nhỏ nên tên này được lấy nguồn cảm hứng từ đó! </li>
+<li>Kết nối với nhau ở ngoài đời sống hay trên mxh đều là nhân duyên, hi vọng Tuấn Anh và mọi người sẽ đồng hành cùng nhau để đạt được nhiều 
+thành quả trên suốt hành trình đầu tư của mình! </li>
             </p>
             </div>
             <div class="mb-8 md:mb-16">
@@ -1875,35 +1889,29 @@ Kết nối với nhau ở ngoài đời sống hay trên mxh đều là nhân d
             </div>
             <div class="lg:flex-1">
                <div class="bg-white rounded">
-                  <form name="contact" method="post" id="contactForm" class="w-full text-sm p-5 md:p-6">
+                  <form name="contact" id="contactForm" class="w-full text-sm p-5 md:p-6">
                   <div class="flex flex-wrap -mx-3 mb-6">
-                     <div class="w-full md:w-1/2 px-3 mb-5">
+                     <div class="w-full px-3 mb-5">
                         <label class="block text-gray-700 text-xs font-semibold mb-2"
                                for="contact_firstName">
                                Tên<span class="text-red-500">*</span>
                         </label>
-                        <input type="text" id="contact_firstName" name="contact[firstName]"  maxlength="255" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease form-control" placeholder="" />
+                        <input type="text" required="required" id="contact_firstName" name="contact[firstName]"  maxlength="255" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease form-control" placeholder="" />
                      </div>
-                     <div class="w-full md:w-1/2 px-3 mb-5">
-                        <label class="block text-gray-700 text-xs font-semibold mb-2"
-                               for="contact_lastName">
-                           Họ<span class="text-red-500">*</span>
-                        </label>
-                        <input type="text" id="contact_lastName" name="contact[lastName]" maxlength="255" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease form-control" placeholder="" />
-                     </div>
+                     
                      <div class="w-full md:w-1/2 px-3 mb-5">
                         <label class="block text-gray-700 text-xs font-semibold mb-2"
                                for="contact_email">
                            Địa chỉ Email<span class="text-red-500">*</span>
                         </label>
-                        <input type="email" id="contact_email" name="contact[email]"  class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease form-control" placeholder="" />
+                        <input type="email" required="required" id="contact_email" name="contact[email]"  class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease form-control" placeholder="" />
                      </div>
                      <div class="w-full md:w-1/2 px-3 mb-5">
                         <label class="block text-gray-700 text-xs font-semibold mb-2"
                                for="contact_phone">
                            Số Điện thoại<span class="text-red-500">*</span>
                         </label>
-                        <input type="text" id="contact_phone" name="contact[phone]"  maxlength="50" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease form-control" placeholder="" />
+                        <input type="text" required="required" id="contact_phone" name="contact[phone]"  maxlength="50" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease form-control" placeholder="" />
                      </div>
                      <div class="w-full px-3 mb-5">
                         <label class="block text-gray-700 text-xs font-semibold mb-2"
@@ -1926,10 +1934,10 @@ Kết nối với nhau ở ngoài đời sống hay trên mxh đều là nhân d
                                for="contact_message">
                            Chi tiết Khác<span class="text-red-500">*</span>
                         </label>
-                        <textarea id="contact_message" name="contact[message]" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease placeholder-gray-600 form-control" placeholder="Cho chúng tôi biết thêm về yêu cầu của bạn: ngành, vấn đề kinh doanh, kết quả mong đợi, thời gian, ngân sách v.v…" rows="6"></textarea>
+                        <textarea id="contact_message" required="required" name="contact[message]" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease placeholder-gray-600 form-control" placeholder="Cho chúng tôi biết thêm về yêu cầu của bạn: ngành, vấn đề kinh doanh, kết quả mong đợi, thời gian, ngân sách v.v…" rows="6"></textarea>
                      </div>
                   </div>
-                  <a href="mailto:tambaoinvestments@gmail.com?"
+                  <button id="sendMsg"
                           class="inline-flex items-center px-5 py-3 bg-brand-blue text-gray-200 rounded mb-5">
                      <svg class="w-4 h-4 mr-2"
                           xmlns="http://www.w3.org/2000/svg"
@@ -1938,7 +1946,7 @@ Kết nối với nhau ở ngoài đời sống hay trên mxh đều là nhân d
                         <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
                      </svg>
                      Gửi Tin nhắn
-                  </a>
+                  </button>
                   <p id="contactMessage"
                      class="bg-green-200 border-l-4 border-green-500 text-green-500 text-sm py-3 px-4 mb-5 hidden">Thank you for reaching us. We will contact you shortly.</p>
                   <p class="leading-snug text-xs text-gray-800">
@@ -2006,7 +2014,7 @@ Kết nối với nhau ở ngoài đời sống hay trên mxh đều là nhân d
       <script src="manifest.js" tppabs="https://ycpsolidiance.com/lp-a03/assets/build/js/manifest.js"></script>
       <script src="vendor.js" tppabs="https://ycpsolidiance.com/lp-a03/assets/build/js/vendor.js"></script>
       <script src="main.js" tppabs="https://ycpsolidiance.com/lp-a03/assets/build/js/main.js"></script>
-
+<!-- 
       <script>
          
                   var serialize=function(e){for(var n=[],t=0;t<e.elements.length;t++){var o=e.elements[t];if(o.name&&!o.disabled&&"file"!==o.type&&"reset"!==o.type&&"submit"!==o.type&&"button"!==o.type)if("select-multiple"===o.type)for(var p=0;p<o.options.length;p++)o.options[p].selected&&n.push(encodeURIComponent(o.name)+"="+encodeURIComponent(o.options[p].value));else("checkbox"!==o.type&&"radio"!==o.type||o.checked)&&n.push(encodeURIComponent(o.name)+"="+encodeURIComponent(o.value))}return n.join("&")};
@@ -2029,7 +2037,58 @@ Kết nối với nhau ở ngoài đời sống hay trên mxh đều là nhân d
                   msg.classList.remove('hidden');
             };
          };
-      </script>
+
+
+
+      </script> -->
+
+<script>
+   // Your web app's Firebase configuration
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+   var firebaseConfig = {
+    apiKey: "AIzaSyBCN9k_s06oMu7C4KZD_i9Z-zaiVZ5lXTY",
+    authDomain: "tambao-ae458.firebaseapp.com",
+    databaseURL: "https://tambao-ae458-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "tambao-ae458",
+    storageBucket: "tambao-ae458.appspot.com",
+    messagingSenderId: "25641738466",
+    appId: "1:25641738466:web:e9b34e40dde4e0f9757ebb",
+    measurementId: "G-0Z5RG497TW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+   console.log(firebase);
+   var database = firebase.database();
+   // var a = firebase.database().ref().push({name: "bien", age:21});
+   // console.log(a);
+   document.getElementById("sendMsg").onclick = function(){
+      var checked = document.getElementById("contact_interests");
+      var Info = {
+         time: getFormattedDate(),
+         name : document.getElementById("contact_firstName").value,
+         phone : document.getElementById("contact_phone").value,
+         email : document.getElementById("contact_email").value,
+         service : checked.options[checked.selectedIndex].text,
+         note : document.getElementById("contact_message").value
+      }
+      // console.log(Info);
+      // firebase.database().ref().push(Info);
+      swal("Tuyệt vời!", "Cảm ơn bạn đã gửi phản hồi!", "success");
+      document.getElementById("contact_firstName").value = "";
+      document.getElementById("contact_phone").value = "";
+      document.getElementById("contact_email").value = "";
+      document.getElementById("contact_message").value = "";
+   }
+
+   function getFormattedDate() {
+    var date = new Date();
+    var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+    return str;
+}
+
+ </script>
    </body>
 
 </html>
