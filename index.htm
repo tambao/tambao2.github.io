@@ -1894,7 +1894,7 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
                      <div class="w-full px-3 mb-5">
                         <label class="block text-gray-700 text-xs font-semibold mb-2"
                                for="contact_firstName">
-                               Tên<span class="text-red-500">*</span>
+                               Tên khách hàng<span class="text-red-500">*</span>
                         </label>
                         <input type="text" required="required" id="contact_firstName" name="contact[firstName]"  maxlength="255" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease form-control" placeholder="" />
                      </div>
@@ -1919,7 +1919,19 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
                            Dịch vụ Quan tâm<span class="text-red-500">*</span>
                         </label>
                         <div class="relative">
-                           <select id="contact_interests" name="contact[interests]" class="appearance-none bg-white block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease pr-8 form-control"><option value="" selected="selected">Các loại dịch vụ quan tâm</option><option value="1">Quy mô/ Xu hướng thị trường</option><option value="2">Cơ cấu ngành</option><option value="3">Cơ cấu công ty</option><option value="4">Thông tin cạnh tranh</option><option value="5">Nghiên cứu định tính</option><option value="6">Am hiểu khách hàng</option><option value="7">Am hiểu kênh phân phối</option><option value="8">Đánh giá cơ hội</option><option value="9">Tư vấn chiến lược</option><option value="10">Tìm kiếm đối tác</option><option value="11">Khác</option></select>
+                           <select id="contact_interests" name="contact[interests]" class="appearance-none bg-white block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease pr-8 form-control">
+                              <option value="1" selected="selected">Tư vấn tài chính</option>
+                              <option value="2">Tam Bao Investments VIP</option>
+                              <option value="3">Tam Bao Investments Care</option>
+                              <option value="4">Tam Bao Investments Prestige</option>
+                              <option value="5">Tam Bao Investments Charity</option>
+                              <option value="6">Tam Bao Investments Academy</option>
+                              <option value="7">Tam Bao Investments Venture Capital</option>
+                              <option value="8">Thông tin công ty</option>
+                              <option value="9">Đề xuất Chiến lược</option>
+                              <option value="10">Tìm kiếm đối tác</option>
+                              <option value="11">Khác</option>
+                           </select>
                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                               <svg class="fill-current h-4 w-4"
                                    xmlns="http://www.w3.org/2000/svg"
@@ -1932,9 +1944,10 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
                      <div class="w-full px-3">
                         <label class="block text-gray-700 text-xs font-semibold mb-2"
                                for="contact_message">
-                           Chi tiết Khác<span class="text-red-500">*</span>
+                           Nội dung<span class="text-red-500">*</span>
                         </label>
-                        <textarea id="contact_message" required="required" name="contact[message]" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease placeholder-gray-600 form-control" placeholder="Cho chúng tôi biết thêm về yêu cầu của bạn: ngành, vấn đề kinh doanh, kết quả mong đợi, thời gian, ngân sách v.v…" rows="6"></textarea>
+                        <textarea id="contact_message" required="required" name="contact[message]" class="appearance-none block w-full text-gray-700 border rounded p-2 leading-snug focus:shadow-outline focus:border-blue-300 transition duration-300 ease placeholder-gray-600 form-control" 
+                        placeholder="Cho chúng tôi biết thêm về yêu cầu, phản hồi của bạn về lĩnh vực mà bạn quan tâm tới chúng tôi..." rows="6"></textarea>
                      </div>
                   </div>
                   <button id="sendMsg"
@@ -2062,24 +2075,46 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
    var database = firebase.database();
    // var a = firebase.database().ref().push({name: "bien", age:21});
    // console.log(a);
-   document.getElementById("sendMsg").onclick = function(){
+   document.getElementById("sendMsg").onclick = function(event){
+      event.preventDefault();
       var checked = document.getElementById("contact_interests");
-      var Info = {
-         time: getFormattedDate(),
-         name : document.getElementById("contact_firstName").value,
-         phone : document.getElementById("contact_phone").value,
-         email : document.getElementById("contact_email").value,
-         service : checked.options[checked.selectedIndex].text,
-         note : document.getElementById("contact_message").value
+      var name = document.getElementById("contact_firstName").value;
+      var phone = document.getElementById("contact_phone").value;
+      var email = document.getElementById("contact_email").value;
+      var note = document.getElementById("contact_message").value;
+      var service = checked.options[checked.selectedIndex].text;
+
+      if(name.length == 0 || phone.length == 0 || email.length==0 || note.length==0 || validateEmail(email)==false){
+         swal("OOps!", "Vui lòng nhập đủ thông tin!", "warning");
+      }else{
+         var Info = {
+            time: getFormattedDate(),
+            name,
+            phone,
+            email,
+            service,
+            note
+         }
+         console.log(Info);
+         firebase.database().ref().push(Info).then(()=>{
+            console.log('Save to Firebase was successful');
+            swal("Tuyệt vời!", "Cảm ơn bạn đã gửi phản hồi!", "success");
+            document.getElementById("contact_firstName").value = "";
+            document.getElementById("contact_phone").value = "";
+            document.getElementById("contact_email").value = "";
+            document.getElementById("contact_message").value = "";
+
+         }).catch((err)=>{
+            console.log(error);
+         });
       }
-      // console.log(Info);
-      firebase.database().ref().push(Info);
-      swal("Tuyệt vời!", "Cảm ơn bạn đã gửi phản hồi!", "success");
-      document.getElementById("contact_firstName").value = "";
-      document.getElementById("contact_phone").value = "";
-      document.getElementById("contact_email").value = "";
-      document.getElementById("contact_message").value = "";
+      
    }
+
+   function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
 
    function getFormattedDate() {
     var date = new Date();
