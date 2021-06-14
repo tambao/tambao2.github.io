@@ -2073,7 +2073,7 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
          note : document.getElementById("contact_message").value
       }
       // console.log(Info);
-      // firebase.database().ref().push(Info);
+      firebase.database().ref().push(Info);
       swal("Tuyệt vời!", "Cảm ơn bạn đã gửi phản hồi!", "success");
       document.getElementById("contact_firstName").value = "";
       document.getElementById("contact_phone").value = "";
