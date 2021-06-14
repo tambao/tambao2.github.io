@@ -1973,7 +1973,7 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
 
       <footer class="py-4 bg-white md:py-8">
          <div class="container text-xs text-center text-gray-500 md:text-sm">
-            <p>
+            <p id="countView">
                &copy; 2021 Tam Bao Investments. All Rights Reserved.
             </p>
          </div>
@@ -2053,8 +2053,11 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-   console.log(firebase);
+
    var database = firebase.database();
+
+   countView();
+   getCountView();
    // var a = firebase.database().ref().push({name: "bien", age:21});
    // console.log(a);
    document.getElementById("sendMsg").onclick = function(event){
@@ -2078,7 +2081,7 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
             note
          }
          console.log(Info);
-         firebase.database().ref().push(Info).then(()=>{
+         firebase.database().ref('feedback').push(Info).then(()=>{
             console.log('Save to Firebase was successful');
             swal("Tuyệt vời!", "Cảm ơn bạn đã gửi phản hồi!", "success");
             document.getElementById("contact_firstName").value = "";
@@ -2093,17 +2096,41 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
       
    }
 
+   function countView(){
+      setTimeout(function(){ 
+         var View = {time: getFormattedDate(), 
+            appVersion: navigator.appVersion,
+            browserName : navigator.appCodeName,
+            userAgent : navigator.userAgent,
+            operatingSystem : navigator.platform,
+            language : navigator.language
+         }
+            firebase.database().ref('access').push(View);
+       }, 3000);
+   }
+
+   function getCountView(){
+      var accessRef = firebase.database().ref('access');
+      var txt = document.getElementById('countView').innerHTML;
+      console.log(txt);
+      accessRef.get().then( snapshot =>{
+         document.getElementById('countView').innerHTML = txt+" ( Tổng lượt truy cập : "+ snapshot.numChildren()+" lượt)";
+         console.log(snapshot.numChildren());
+         console.log(snapshot.val());
+      });
+   }
+
    function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+   }
 
    function getFormattedDate() {
-    var date = new Date();
-    var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+      var date = new Date();
+      var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
-    return str;
-}
+      return str;
+   }     
 
  </script>
    </body>
