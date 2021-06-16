@@ -1785,53 +1785,57 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
                <li>Hotline: 09.2829.9696</li>
             </p>
             <br>
-            <!-- <h3 class="font-semibold leading-tight text-base md:text-2xl mb-2 md:mb-4">
-               Ấn bản Nghiên cứu
-            </h3>
+            <h2 class="leading-tight font-bold text-2xl md:text-3xl lg:text-4xl"
+                data-aos="fade-right">
+               Tài liệu nghiên cứu
+            </h2>
+            <br>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-               <div>
+
+               <a href="images/tambao/stock_1.jpg" target="_blank">
                   <img class="lazyload w-full object-cover mb-2"
-                       data-src="images/WP-1.png" 
+                       data-src="images/tambao/stock_1.jpg" 
                        alt="Xu hướng Tiêu dùng tại Myanmar"
                        data-aos="fade-left">
-                  <p class="font-medium text-xs md:text-sm">Xu hướng Tiêu dùng tại Myanmar</p>
-               </div>
-               <div>
+                  <p class="font-medium text-xs md:text-sm">Tam Bảo Investments</p>
+               </a>
+               <a href="images/tambao/stock_2.jpg" target="_blank">
                   <img class="lazyload w-full object-cover mb-2"
-                       data-src="images/wp-2.png" 
-                       alt="Chăm sóc Sức khỏe Số tại Philippines"
+                       data-src="images/tambao/stock_2.jpg" 
+                       alt="Xu hướng Tiêu dùng tại Myanmar"
                        data-aos="fade-left">
-                  <p class="font-medium text-xs md:text-sm">Chăm sóc Sức khỏe Số tại Philippines</p>
-               </div>
-               <div>
+                  <p class="font-medium text-xs md:text-sm">Tam Bảo Investments</p>
+               </a>
+               <a href="images/tambao/stock_3.jpg" target="_blank">
                   <img class="lazyload w-full object-cover mb-2"
-                       data-src="images/wp-3.png" 
-                       alt="Chăm sóc Sức khỏe Số tại Việt Nam"
+                       data-src="images/tambao/stock_3.jpg" 
+                       alt="Xu hướng Tiêu dùng tại Myanmar"
                        data-aos="fade-left">
-                  <p class="font-medium text-xs md:text-sm">Chăm sóc Sức khỏe Số tại Việt Nam</p>
-               </div>
-               <div>
+                  <p class="font-medium text-xs md:text-sm">Tam Bảo Investments</p>
+               </a>
+               <a href="images/tambao/stock_4.jpg" target="_blank">
                   <img class="lazyload w-full object-cover mb-2"
-                       data-src="images/wp-4.png"
-                       alt="Triển vọng Kinh tế Thái Lan"
+                       data-src="images/tambao/stock_4.jpg" 
+                       alt="Xu hướng Tiêu dùng tại Myanmar"
                        data-aos="fade-left">
-                  <p class="font-medium text-xs md:text-sm">Triển vọng Kinh tế Thái Lan</p>
-               </div>
-               <div>
+                  <p class="font-medium text-xs md:text-sm">Tam Bảo Investments</p>
+               </a>
+               <a href="images/tambao/stock_5.jpg" target="_blank">
                   <img class="lazyload w-full object-cover mb-2"
-                       data-src="images/wp-5.png" 
-                       alt="Xu hướng Thương mại điện tử Châu Á"
+                       data-src="images/tambao/stock_5.jpg" 
+                       alt="Xu hướng Tiêu dùng tại Myanmar"
                        data-aos="fade-left">
-                  <p class="font-medium text-xs md:text-sm">Xu hướng Thương mại điện tử Châu Á</p>
-               </div>
-               <div>
+                  <p class="font-medium text-xs md:text-sm">Tam Bảo Investments</p>
+               </a>
+               <a href="images/tambao/stock_6.jpg" target="_blank">
                   <img class="lazyload w-full object-cover mb-2"
-                       data-src="images/wp-6.png"
-                       alt="Xu hướng Đầu tư tại Thái Lan"
+                       data-src="images/tambao/stock_6.jpg" 
+                       alt="Xu hướng Tiêu dùng tại Myanmar"
                        data-aos="fade-left">
-                  <p class="font-medium text-xs md:text-sm">Xu hướng Đầu tư tại Thái Lan</p>
-               </div>
-            </div> -->
+                  <p class="font-medium text-xs md:text-sm">Tam Bảo Investments</p>
+               </a>
+
+            </div>      
          </div>
          <!-- <div>
             <h3 class="mb-2 text-base font-semibold leading-tight md:text-2xl md:mb-4">
@@ -2106,13 +2110,12 @@ thành quả trên suốt hành trình đầu tư của mình! </li>
             language : navigator.language
          }
             firebase.database().ref('access').push(View);
-       }, 3000);
+       }, 5000);
    }
 
    function getCountView(){
       var accessRef = firebase.database().ref('access');
       var txt = document.getElementById('countView').innerHTML;
-      console.log(txt);
       accessRef.get().then( snapshot =>{
          document.getElementById('countView').innerHTML = txt+" ( Tổng lượt truy cập : "+ snapshot.numChildren()+" lượt)";
          console.log(snapshot.numChildren());
